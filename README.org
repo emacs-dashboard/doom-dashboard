@@ -1,0 +1,125 @@
+[[https://www.gnu.org/licenses/gpl-3.0][https://img.shields.io/badge/License-GPL%20v3-blue.svg]]
+[[https://jcs-emacs.github.io/jcs-elpa/#/ace-link-dashboard][https://raw.githubusercontent.com/jcs-emacs/badges/master/elpa/v/ace-link-dashboard.svg]]
+
+* Doom Dashboard
+
+[[https://github.com/emacs-dashboard/doom-dashboard/actions/workflows/test.ym][https://github.com/emacs-dashboard/ace-link-dashboard/actions/workflows/test.yml/badge.svg]]
+
+[[https://github.com/doomemacs/doomemacs/tree/master/modules/ui/doom-dashboard][Doom Dashboard]] for [[https://github.com/emacs-dashboard/emacs-dashboard][emacs-dashboard]]
+
+Dashboard extension for get a look similar to Doom Dashboard!
+This add 5 new widgets for dashboard!
+
+* Installation and Configuration:
+
+#+begin_src emacs-lisp
+  (use-package doom-dashboard
+    ;; For Straight Users
+    :straight (ace-link-dashboard :host github
+                                  :repo "emacs-dashboard/ace-link-dashboard")
+    ;; Or for built-in package-vc
+    ;; :vc (:url "https://github.com/emacs-dashboard/doom-dashboard.git" :rev :newest)
+    :after dashboard
+    :demand t
+    ;; Movement keys like doom.
+    :bind
+    (:map dashboard-map
+          ("<remap> <dashboard-previous-line>" . widget-backward)
+          ("<remap> <dashboard-next-line>" . widget-forward)
+          ("<remap> <previous-line>" . widget-backward)
+          ("<remap> <next-line>" . widget-forward)
+          ("<remap> <right-char>" . widget-forward)
+          ("<remap> <left-char>" . widget-backward))
+    :custom
+    (dashboard-banner-logo-title "E M A C S")
+    (dashboard-startup-banner 3) ; Use banner you want
+    (dashboard-page-separator "\n")
+    (dashboard-startupify-list '(dashboard-insert-banner
+                                 dashboard-insert-banner-title
+                                 dashboard-insert-newline
+                                 dashboard-insert-items
+                                 dashboard-insert-newline
+                                 dashboard-insert-newline
+                                 dashboard-insert-init-info
+                                 dashboard-insert-newline
+                                 dashboard-insert-newline
+                                 dashboard-insert-homepage-footer))
+    (dashboard-item-generators
+     '((recents . dashboard-insert-recents-shortmenu)
+       (bookmarks . dashboard-insert-bookmark-shortmenu)
+       (projects . dashboard-insert-project-shortmenu)
+       (agenda . dashboard-insert-org-agenda-shortmenu)))
+    (dashboard-items '(projects
+                      agenda
+                      bookmarks
+                      recents)))
+#+end_src
+
+** 🛠️ Contribute
+
+[[http://makeapullrequest.com][https://img.shields.io/badge/PRs-welcome-brightgreen.svg]]
+[[https://github.com/bbatsov/emacs-lisp-style-guide][https://img.shields.io/badge/elisp-style%20guide-purple.svg]]
+
+If you would like to contribute to this project, you may either
+clone and make pull requests to this repository. Or you can
+clone the project and establish your own branch of this tool.
+Any methods are welcome!
+
+*** 🔬 Development
+
+To run the test locally, you will need the following tools:
+
+- [[https://emacs-eask.github.io/][Eask]]
+- [[https://www.gnu.org/software/make/][Make]] (optional)
+
+Install all dependencies and development dependencies:
+
+#+begin_src sh
+$ eask install-deps --dev
+#+end_src
+
+To test the package's installation:
+
+#+begin_src sh
+$ eask package
+$ eask install
+#+end_src
+
+To test compilation:
+
+#+begin_src sh
+$ eask compile
+#+end_src
+
+🪧 The following steps are optional, but we recommend you follow these lint results!
+
+The built-in =checkdoc= linter:
+
+#+begin_src sh
+$ eask lint checkdoc
+#+end_src
+
+The standard =package= linter:
+
+#+begin_src sh
+$ eask lint package
+#+end_src
+
+📝 P.S. For more information, find the Eask manual at https://emacs-eask.github.io/.
+
+** ⚜️ License
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+See [[./LICENSE][LICENSE]] for details.
