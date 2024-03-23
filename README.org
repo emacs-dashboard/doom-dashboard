@@ -45,10 +45,10 @@ This add 5 new widgets for dashboard!
                                  ,(dashboard-insert-newline 2)
                                  doom-dashboard-insert-homepage-footer))
     (dashboard-item-generators
-     '((recents . doom-dashboard-insert-recents-shortmenu)
+     '((recents   . doom-dashboard-insert-recents-shortmenu)
        (bookmarks . doom-dashboard-insert-bookmark-shortmenu)
-       (projects . doom-dashboard-insert-project-shortmenu)
-       (agenda . dashboard-insert-org-agenda-shortmenu)))
+       (projects  . doom-dashboard-insert-project-shortmenu)
+       (agenda    . doom-dashboard-insert-org-agenda-shortmenu)))
     (dashboard-items '(projects
                       agenda
                       bookmarks
