@@ -45,6 +45,15 @@
   :type 'boolean)
 
 ;;
+;; Faces
+;;
+
+(defface doom-dashboard-bindings-face
+  '((t (:inherit font-lock-constant-face)))
+  "Face used for shortmenu widgets bindings."
+  :group 'dashboard)
+
+;;
 ;; Widget functions
 ;;
 
@@ -82,7 +91,7 @@
     (if doom-dashboard-set-widget-binding
         (insert (propertize (substitute-command-keys fn-keymap)
                             'face
-                            'font-lock-constant-face)))))
+                            'doom-dashboard-bindings-face)))))
 
 (defun doom-dashboard-insert-org-agenda-shortmenu (&rest _)
   "Insert `org-agenda' shortmenu widget."
@@ -104,7 +113,7 @@
     (if doom-dashboard-set-widget-binding
         (insert (propertize (substitute-command-keys fn-keymap)
                             'face
-                            'font-lock-constant-face)))))
+                            'doom-dashboard-bindings-face)))))
 
 (defun doom-dashboard-insert-bookmark-shortmenu (&rest _)
   "Insert bookmark shortmenu widget."
@@ -126,7 +135,7 @@
     (if doom-dashboard-set-widget-binding
         (insert (propertize (substitute-command-keys fn-keymap)
                             'face
-                            'font-lock-constant-face)))))
+                            'doom-dashboard-bindings-face)))))
 
 (defun doom-dashboard-insert-recents-shortmenu (&rest _)
   "Insert recent files short menu widget."
@@ -148,7 +157,7 @@
     (if doom-dashboard-set-widget-binding
         (insert (propertize (substitute-command-keys fn-keymap)
                             'face
-                            'font-lock-constant-face)))))
+                            'doom-dashboard-bindings-face)))))
 
 (provide 'doom-dasbhoard)
 ;;; doom-dashboard.el ends here
