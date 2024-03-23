@@ -2,8 +2,6 @@
 
 * Doom Dashboard
 
-[[https://github.com/emacs-dashboard/doom-dashboard/actions/workflows/test.ym][https://github.com/emacs-dashboard/ace-link-dashboard/actions/workflows/test.yml/badge.svg]]
-
 [[https://github.com/doomemacs/doomemacs/tree/master/modules/ui/doom-dashboard][Doom Dashboard]] for [[https://github.com/emacs-dashboard/emacs-dashboard][emacs-dashboard]]
 
 Dashboard extension for get a look similar to Doom Dashboard!
