@@ -20,39 +20,37 @@ This add 5 new widgets for dashboard!
 #+begin_src emacs-lisp
   (use-package doom-dashboard
     ;; For Straight Users
-    :straight (ace-link-dashboard :host github
-                                  :repo "emacs-dashboard/ace-link-dashboard")
+    :straight (doom-dashboard :host github
+                                  :repo "emacs-dashboard/doom-dashboard")
     ;; Or for built-in package-vc
     ;; :vc (:url "https://github.com/emacs-dashboard/doom-dashboard.git" :rev :newest)
     :after dashboard
     :demand t
     ;; Movement keys like doom.
     :bind
-    (:map dashboard-map
+    (:map dashboard-mode-map
           ("<remap> <dashboard-previous-line>" . widget-backward)
           ("<remap> <dashboard-next-line>" . widget-forward)
           ("<remap> <previous-line>" . widget-backward)
-          ("<remap> <next-line>" . widget-forward)
+          ("<remap> <next-line>"  . widget-forward)
           ("<remap> <right-char>" . widget-forward)
-          ("<remap> <left-char>" . widget-backward))
+          ("<remap> <left-char>"  . widget-backward))
     :custom
     (dashboard-banner-logo-title "E M A C S")
     (dashboard-startup-banner 3) ; Use banner you want
     (dashboard-page-separator "\n")
-    (dashboard-startupify-list '(dashboard-insert-banner
+    (dashboard-startupify-list `(dashboard-insert-banner
                                  dashboard-insert-banner-title
                                  dashboard-insert-newline
                                  dashboard-insert-items
-                                 dashboard-insert-newline
-                                 dashboard-insert-newline
+                                 ,(dashboard-insert-newline 2)
                                  dashboard-insert-init-info
-                                 dashboard-insert-newline
-                                 dashboard-insert-newline
-                                 dashboard-insert-homepage-footer))
+                                 ,(dashboard-insert-newline 2)
+                                 doom-dashboard-insert-homepage-footer))
     (dashboard-item-generators
-     '((recents . dashboard-insert-recents-shortmenu)
-       (bookmarks . dashboard-insert-bookmark-shortmenu)
-       (projects . dashboard-insert-project-shortmenu)
+     '((recents . doom-dashboard-insert-recents-shortmenu)
+       (bookmarks . doom-dashboard-insert-bookmark-shortmenu)
+       (projects . doom-dashboard-insert-project-shortmenu)
        (agenda . dashboard-insert-org-agenda-shortmenu)))
     (dashboard-items '(projects
                       agenda
