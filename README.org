@@ -10,6 +10,11 @@
 Dashboard extension for get a look similar to Doom Dashboard!
 This add 5 new widgets for dashboard!
 
+
+* Screenshot
+
+[[./etc/screenshot.png]]
+
 * Installation and Configuration:
 
 #+begin_src emacs-lisp
