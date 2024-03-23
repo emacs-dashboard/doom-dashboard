@@ -79,7 +79,7 @@
                    :button-prefix ""
                    :button-suffix ""
                    :format "%[%t%]")
-    (if doom-dashboard-set-binding
+    (if doom-dashboard-set-widget-binding
         (insert (propertize (substitute-command-keys fn-keymap)
                             'face
                             'font-lock-constant-face)))))
@@ -101,7 +101,7 @@
                    :button-prefix ""
                    :button-suffix ""
                    :format "%[%t%]")
-    (if doom-dashboard-set-binding
+    (if doom-dashboard-set-widget-binding
         (insert (propertize (substitute-command-keys fn-keymap)
                             'face
                             'font-lock-constant-face)))))
@@ -123,7 +123,7 @@
                    :button-prefix ""
                    :button-suffix ""
                    :format "%[%t%]")
-    (if doom-dashboard-set-binding
+    (if doom-dashboard-set-widget-binding
         (insert (propertize (substitute-command-keys fn-keymap)
                             'face
                             'font-lock-constant-face)))))
@@ -145,7 +145,7 @@
                    :button-prefix ""
                    :button-suffix ""
                    :format "%[%t%]")
-    (if doom-dashboard-set-binding
+    (if doom-dashboard-set-widget-binding
         (insert (propertize (substitute-command-keys fn-keymap)
                             'face
                             'font-lock-constant-face)))))
