@@ -47,6 +47,10 @@
   :type 'boolean
   :group 'dashboard)
 
+(defconst doom-dashboard-banner-directory
+  (concat (file-name-directory (locate-library "doom-dashboard")) "banners/")
+  "Extras banners for dashboard.")
+
 (defcustom doom-dashboard-shortmenu-functions
   `((recents   . recentf)
     (bookmarks . bookmark-jump)
