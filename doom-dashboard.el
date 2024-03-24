@@ -47,6 +47,20 @@
   :type 'boolean
   :group 'dashboard)
 
+(defcustom doom-dashboard-shortmenu-functions
+  `((recents   . recentf)
+    (bookmarks . bookmark-jump)
+    (projects
+     . ,(if (eq dashboard-projects-backend 'project-el)
+            'project-switch-project
+          'projectile-switch-project))
+    (agenda    . org-agenda))
+  "Functions to me used by shortmenu widgets.
+Possible values for list-type are: `recents', `bookmarks', `projects',
+`agenda' ,`registers'."
+  :type  '(alist :key-type symbol :value-type function)
+  :group 'dashboard)
+
 ;;
 ;; Faces
 ;;
@@ -76,7 +90,7 @@
 
 (defun doom-dashboard-insert-project-shortmenu (&rest _)
   "Insert project shortmenu widget."
-  (let* ((fn #'project-switch-project)
+  (let* ((fn (alist-get 'projects doom-dashboard-shortmenu-functions))
          (fn-keymap (format "\\[%s]" fn))
          (icon-name (alist-get 'projects dashboard-heading-icons))
          (icon (nerd-icons-octicon icon-name :face 'dashboard-heading)))
@@ -85,7 +99,8 @@
     (widget-create 'item
                    :tag (format "%-30s" "Open project")
                    :action (lambda (&rest _)
-                             (call-interactively #'project-switch-project))
+                             (call-interactively
+                              (alist-get 'projects doom-dashboard-shortmenu-functions)))
                    :mouse-face 'highlight
                    :button-face 'dashboard-heading
                    :button-prefix ""
@@ -98,7 +113,7 @@
 
 (defun doom-dashboard-insert-org-agenda-shortmenu (&rest _)
   "Insert `org-agenda' shortmenu widget."
-  (let* ((fn #'org-agenda)
+  (let* ((fn (alist-get 'agenda doom-dashboard-shortmenu-functions))
          (fn-keymap (format "\\[%s]" fn))
          (icon-name (alist-get 'agenda dashboard-heading-icons))
          (icon (nerd-icons-octicon icon-name :face 'dashboard-heading)))
@@ -107,7 +122,8 @@
     (widget-create 'item
                    :tag (format "%-30s" "Open org-agenda")
                    :action (lambda (&rest _)
-                             (call-interactively #'org-agenda))
+                             (call-interactively 
+                              (alist-get 'agenda doom-dashboard-shortmenu-functions)))
                    :mouse-face 'highlight
                    :button-face 'dashboard-heading
                    :button-prefix ""
@@ -120,7 +136,7 @@
 
 (defun doom-dashboard-insert-bookmark-shortmenu (&rest _)
   "Insert bookmark shortmenu widget."
-  (let* ((fn #'bookmark-jump)
+  (let* ((fn (alist-get 'bookmarks doom-dashboard-shortmenu-functions))
          (fn-keymap (format "\\[%s]" fn))
          (icon-name (alist-get 'bookmarks dashboard-heading-icons))
          (icon (nerd-icons-octicon icon-name :face 'dashboard-heading)))
@@ -129,7 +145,8 @@
     (widget-create 'item
                    :tag (format "%-30s" "Jump to bookmark")
                    :action (lambda (&rest _)
-                             (call-interactively #'bookmark-jump))
+                             (call-interactively 
+                              (alist-get 'bookmarks doom-dashboard-shortmenu-functions)))
                    :mouse-face 'highlight
                    :button-face 'dashboard-heading
                    :button-prefix ""
@@ -142,7 +159,7 @@
 
 (defun doom-dashboard-insert-recents-shortmenu (&rest _)
   "Insert recent files short menu widget."
-  (let* ((fn #'recentf)
+  (let* ((fn (alist-get 'recents doom-dashboard-shortmenu-functions))
          (fn-keymap (format "\\[%s]" fn))
          (icon-name (alist-get 'recents dashboard-heading-icons))
          (icon (nerd-icons-octicon icon-name :face 'dashboard-heading)))
@@ -151,7 +168,8 @@
     (widget-create 'item
                    :tag (format "%-30s" "Recently opened files")
                    :action (lambda (&rest _)
-                             (call-interactively #'recentf))
+                             (call-interactively 
+                              (alist-get 'recents doom-dashboard-shortmenu-functions)))
                    :mouse-face 'highlight
                    :button-face 'dashboard-heading
                    :button-prefix ""
