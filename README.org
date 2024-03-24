@@ -37,7 +37,10 @@ This add 5 new widgets for dashboard!
           ("<remap> <left-char>"  . widget-backward))
     :custom
     (dashboard-banner-logo-title "E M A C S")
-    (dashboard-startup-banner 3) ; Use banner you want
+    (dashboard-startup-banner 
+     (concat doom-dashboard-banner-directory "bcc.txt")) ; Use banner you want
+    (dashboard-footer-icon 
+     (nerd-icons-faicon "nf-fa-github_alt" :face 'success :height 1.5))
     (dashboard-page-separator "\n")
     (dashboard-startupify-list `(dashboard-insert-banner
                                  dashboard-insert-banner-title
@@ -52,10 +55,7 @@ This add 5 new widgets for dashboard!
        (bookmarks . doom-dashboard-insert-bookmark-shortmenu)
        (projects  . doom-dashboard-insert-project-shortmenu)
        (agenda    . doom-dashboard-insert-org-agenda-shortmenu)))
-    (dashboard-items '(projects
-                      agenda
-                      bookmarks
-                      recents)))
+    (dashboard-items '(projects agenda bookmarks recents)))
 #+end_src
 
 ** 🛠️ Contribute
