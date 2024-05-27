@@ -184,5 +184,5 @@ Possible values for list-type are: `recents', `bookmarks', `projects',
                             'face
                             'doom-dashboard-bindings-face)))))
 
-(provide 'doom-dasbhoard)
+(provide 'doom-dashboard)
 ;;; doom-dashboard.el ends here
