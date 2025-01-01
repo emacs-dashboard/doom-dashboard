@@ -1,6 +1,6 @@
 ;;; doom-dashboard.el --- Doom dashboard style for emacs-dashboard  -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2024  emacs-dashboard maintainers
+;; Copyright (C) 2024-2025  emacs-dashboard maintainers
 
 ;; Author: Elijah G. <eg642616@gmail.com>
 ;; URL: https://github.com/emacs-dashboard/doom-dashboard
