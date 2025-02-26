@@ -5,7 +5,7 @@
 ;; Author: Elijah G. <eg642616@gmail.com>
 ;; URL: https://github.com/emacs-dashboard/doom-dashboard
 ;; Version: 0.1.0
-;; Package-Requires: ((emacs "26.1") (dashboard "1.2.5") (nerd-icons "0.1.0"))
+;; Package-Requires: ((emacs "27.1") (dashboard "1.2.5") (nerd-icons "0.1.0"))
 ;; Keywords: convenience tools extension
 
 ;; This file is NOT part of GNU Emacs.
