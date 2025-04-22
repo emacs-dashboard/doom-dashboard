@@ -1,3 +1,5 @@
+;; -*- mode: eask; lexical-binding: t -*-
+
 (package "doom-dashboard"
          "0.1.0"
          "Doom dashboard style for emacs-dashboard")
