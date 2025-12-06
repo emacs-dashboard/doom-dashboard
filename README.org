@@ -61,7 +61,7 @@ This add 5 new widgets for dashboard!
 ** 🛠️ Contribute
 
 [[http://makeapullrequest.com][https://img.shields.io/badge/PRs-welcome-brightgreen.svg]]
-[[https://github.com/bbatsov/emacs-lisp-style-guide][https://img.shields.io/badge/elisp-style%20guide-purple.svg]]
+[[https://github.com/bbatsov/emacs-lisp-style-guide][https://img.shields.io/badge/elisp-style%20guide-purple.svg?logo=gnuemacs&logoColor=white]]
 
 If you would like to contribute to this project, you may either
 clone and make pull requests to this repository. Or you can
