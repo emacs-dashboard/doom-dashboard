@@ -99,7 +99,7 @@ Possible values for list-type are: `recents', `bookmarks', `projects',
          (icon-name (alist-get 'projects dashboard-heading-icons))
          (icon (nerd-icons-octicon icon-name :face 'dashboard-heading)))
     (if dashboard-display-icons-p
-        (insert (format "%-3s" icon)))
+        (insert (string-pad icon 3)))
     (widget-create 'item
                    :tag (format "%-30s" "Open project")
                    :action (lambda (&rest _)
@@ -122,7 +122,7 @@ Possible values for list-type are: `recents', `bookmarks', `projects',
          (icon-name (alist-get 'agenda dashboard-heading-icons))
          (icon (nerd-icons-octicon icon-name :face 'dashboard-heading)))
     (if dashboard-display-icons-p
-        (insert (format "%-3s" icon)))
+        (insert (string-pad icon 3)))
     (widget-create 'item
                    :tag (format "%-30s" "Open org-agenda")
                    :action (lambda (&rest _)
@@ -145,7 +145,7 @@ Possible values for list-type are: `recents', `bookmarks', `projects',
          (icon-name (alist-get 'bookmarks dashboard-heading-icons))
          (icon (nerd-icons-octicon icon-name :face 'dashboard-heading)))
     (if dashboard-display-icons-p
-        (insert (format "%-3s" icon)))
+        (insert (string-pad icon 3)))
     (widget-create 'item
                    :tag (format "%-30s" "Jump to bookmark")
                    :action (lambda (&rest _)
@@ -168,7 +168,7 @@ Possible values for list-type are: `recents', `bookmarks', `projects',
          (icon-name (alist-get 'recents dashboard-heading-icons))
          (icon (nerd-icons-octicon icon-name :face 'dashboard-heading)))
     (if dashboard-display-icons-p
-        (insert (format "%-3s" icon)))
+        (insert (string-pad icon 3)))
     (widget-create 'item
                    :tag (format "%-30s" "Recently opened files")
                    :action (lambda (&rest _)
